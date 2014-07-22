@@ -12,8 +12,6 @@ def readf(fname):
     mem = [float(x.split()[1]) / 1e3 for x in lines if len(x) > 0] # kb to mb
     return n, mem
 
-
-
 def main():
     fnames = sys.argv[1:]
     plt.rc('lines', linewidth=2)
