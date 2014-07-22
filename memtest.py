@@ -17,7 +17,7 @@ for n in xrange(N):
     h = Hollow()
     del h
     if n%Ndiv10 == 0:
-        print(n/Ndiv10, end=" ")
+        print(n/Ndiv10, resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
         sys.stdout.flush()
 
 print()

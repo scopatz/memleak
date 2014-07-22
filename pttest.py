@@ -3,12 +3,13 @@ from __future__ import print_function
 import os
 import gc
 import sys
+import resource 
 
 import numpy as np
 import tables as tb
 
-N = 10**5
-Ndiv10 = N/10
+N = 10**4
+freq = N/100
 
 _N_CAPS_MAX = 10
 
@@ -33,7 +34,7 @@ with tb.open_file('x.h5', 'w') as f:
             row[name] = dat[name]
         row.append()
         tab.flush()
-        if n%Ndiv10 == 0:
-            print(n/Ndiv10, end=" ")
+        if n%freq == 0:
+            print(n/freq, resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
             sys.stdout.flush()
 print()

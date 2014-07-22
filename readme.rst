@@ -2,6 +2,20 @@ memory leak tests
 =================
 This tries a bunch of potential causes of a memory leak in gidden/cyclopts.
 
+A plotting script is provided that can plot the results for any of the following
+tests. For example, one can plot the results ``pttest.py`` by ::
+
+    $ ./pttest.py > out
+    $ ./plt.py out
+    $ eog fig.png
+
+An arbitrary number of files can be plotted against each other, e.g. ::
+
+    $ ./pttest.py > out.pt
+    $ ./pttest-np.py > out.np
+    $ ./plt.py out.pt out.np
+    $ eog fig.png
+
 Test 1: xdress
 --------------
 This is not the cause.  To replicate run::
